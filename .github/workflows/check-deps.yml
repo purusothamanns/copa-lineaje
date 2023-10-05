@@ -1,0 +1,35 @@
+name: Check dependencies
+on:
+  push:
+    # paths:
+    #   - '**.go'
+    branches:
+      - main
+      - release-*
+  pull_request:
+    # paths:
+    #   - '**.go'
+    branches:
+      - main
+      - release-*
+
+permissions: read-all
+
+jobs:
+  check-deps:
+    name: "Check dependencies"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+      - name: Set up Go 1.21
+        uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
+        with:
+          go-version: "1.21"
+      - name: Check go.mod
+        shell: bash
+        run: |
+          # there should be no go.mod changes
+          go mod tidy
+          git diff --exit-code
