@@ -25,11 +25,11 @@ func parseFakeReport(file string) (*FakeReport, error) {
 	return &fake, nil
 }
 
-func NewFakeParser() *FakeParser {
+func newFakeParser() *FakeParser {
 	return &FakeParser{}
 }
 
-func (k *FakeParser) Parse(file string) (*v1alpha1.UpdateManifest, error) {
+func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 	// Parse the fake report
 	report, err := parseFakeReport(file)
 	if err != nil {
@@ -66,12 +66,12 @@ func main() {
 	}
 
 	// Initialize the parser
-	fakeParser := NewFakeParser()
+	fakeParser := newFakeParser()
 
 	// Get the image report from command line
 	imageReport := os.Args[1]
 
-	report, err := fakeParser.Parse(imageReport)
+	report, err := fakeParser.parse(imageReport)
 	if err != nil {
 		fmt.Printf("error parsing report: %v\n", err)
 		os.Exit(1)
