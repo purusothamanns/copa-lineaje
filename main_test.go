@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	types "github.com/project-copacetic/copacetic/pkg/types/v1alpha1"
+	v1alpha1 "github.com/project-copacetic/copacetic/pkg/types/v1alpha1"
 )
 
 func Test_parseFakeReport(t *testing.T) {
@@ -86,8 +86,8 @@ func TestNewFakeParser(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NewFakeParser(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("NewFakeParser() = %v, want %v", got, tt.want)
+			if got := newFakeParser(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("newFakeParser() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -101,18 +101,24 @@ func TestFakeParser_Parse(t *testing.T) {
 		name    string
 		k       *FakeParser
 		args    args
-		want    *types.UpdateManifest
+		want    *v1alpha1.UpdateManifest
 		wantErr bool
 	}{
 		{
 			name: "valid report",
 			k:    &FakeParser{},
 			args: args{file: "testdata/fake_report.json"},
-			want: &types.UpdateManifest{
-				OSType:    "FakeOS",
-				OSVersion: "42",
-				Arch:      "amd64",
-				Updates: []types.UpdatePackage{
+			want: &v1alpha1.UpdateManifest{
+				Metadata: v1alpha1.Metadata{
+					OS: v1alpha1.OS{
+						Type:    "FakeOS",
+						Version: "42",
+					},
+					Config: v1alpha1.Config{
+						Arch: "amd64",
+					},
+				},
+				Updates: []v1alpha1.UpdatePackage{
 					{
 						Name:             "foo",
 						InstalledVersion: "1.0.0",
@@ -146,7 +152,7 @@ func TestFakeParser_Parse(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := tt.k.Parse(tt.args.file)
+			got, err := tt.k.parse(tt.args.file)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("FakeParser.Parse() error = %v, wantErr %v", err, tt.wantErr)
 				return

@@ -39,9 +39,15 @@ func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 	// Create the standardized report
 	updates := v1alpha1.UpdateManifest{
 		APIVersion: v1alpha1.APIVersion,
-		OSType:    report.OSType,
-		OSVersion: report.OSVersion,
-		Arch:      report.Arch,
+		Metadata: v1alpha1.Metadata{
+			OS: v1alpha1.OS{
+				Type: report.OSType,
+				Version: report.OSVersion,
+			},
+			Config: v1alpha1.Config{
+				Arch: report.Arch,
+			},
+		},
 	}
 
 	// Convert the fake report to the standardized report
