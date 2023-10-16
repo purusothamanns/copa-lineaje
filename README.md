@@ -26,9 +26,11 @@ mv $GOPATH/bin/scanner-plugin-template $GOPATH/bin/copa-fake
 
 # test plugin with example config
 copa-fake testdata/fake_report.json
-
-export IMAGE="<image to be patched>"
+# this will print the report in JSON format
+# {"apiVersion":"v1alpha1","metadata":{"os":{"type":"FakeOS","version":"42"},"config":{"arch":"amd64"}},"updates":[{"name":"foo","installedVersion":"1.0.0","fixedVersion":"1.0.1","vulnerabilityID":"VULN001"},{"name":"bar","installedVersion":"2.0.0","fixedVersion":"2.0.1","vulnerabilityID":"VULN002"}]}
 
 # run copa with the scanner plugin (copa-fake) and the report file
 copa patch -i $IMAGE -r testdata/fake_report.json --scanner fake
+# this is for illustration purposes only
+# it will fail with "Error: unsupported osType FakeOS specified"
 ```
