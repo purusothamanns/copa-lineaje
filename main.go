@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/project-copacetic/copacetic/pkg/types"
+	v1alpha1 "github.com/project-copacetic/copacetic/pkg/types/v1alpha1"
 )
 
 type FakeParser struct{}
@@ -25,11 +25,11 @@ func parseFakeReport(file string) (*FakeReport, error) {
 	return &fake, nil
 }
 
-func NewFakeParser() *FakeParser {
+func newFakeParser() *FakeParser {
 	return &FakeParser{}
 }
 
-func (k *FakeParser) Parse(file string) (*types.UpdateManifest, error) {
+func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 	// Parse the fake report
 	report, err := parseFakeReport(file)
 	if err != nil {
@@ -37,17 +37,24 @@ func (k *FakeParser) Parse(file string) (*types.UpdateManifest, error) {
 	}
 
 	// Create the standardized report
-	updates := types.UpdateManifest{
-		OSType:    report.OSType,
-		OSVersion: report.OSVersion,
-		Arch:      report.Arch,
+	updates := v1alpha1.UpdateManifest{
+		APIVersion: v1alpha1.APIVersion,
+		Metadata: v1alpha1.Metadata{
+			OS: v1alpha1.OS{
+				Type: report.OSType,
+				Version: report.OSVersion,
+			},
+			Config: v1alpha1.Config{
+				Arch: report.Arch,
+			},
+		},
 	}
 
 	// Convert the fake report to the standardized report
 	for i := range report.Packages {
 		pkgs := &report.Packages[i]
 		if pkgs.FixedVersion != "" {
-			updates.Updates = append(updates.Updates, types.UpdatePackage{
+			updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
 				Name: pkgs.Name,
 				InstalledVersion: pkgs.InstalledVersion,
 				FixedVersion: pkgs.FixedVersion,
@@ -65,12 +72,12 @@ func main() {
 	}
 
 	// Initialize the parser
-	fakeParser := NewFakeParser()
+	fakeParser := newFakeParser()
 
 	// Get the image report from command line
 	imageReport := os.Args[1]
 
-	report, err := fakeParser.Parse(imageReport)
+	report, err := fakeParser.parse(imageReport)
 	if err != nil {
 		fmt.Printf("error parsing report: %v\n", err)
 		os.Exit(1)
