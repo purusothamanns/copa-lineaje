@@ -87,7 +87,7 @@ func TestNewFakeParser(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := newFakeParser(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("newFakeParser() = %v, want %v", got, tt.want)
+				t.Errorf("NewFakeParser() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -109,6 +109,7 @@ func TestFakeParser_Parse(t *testing.T) {
 			k:    &FakeParser{},
 			args: args{file: "testdata/fake_report.json"},
 			want: &v1alpha1.UpdateManifest{
+				APIVersion: v1alpha1.APIVersion,
 				Metadata: v1alpha1.Metadata{
 					OS: v1alpha1.OS{
 						Type:    "FakeOS",
