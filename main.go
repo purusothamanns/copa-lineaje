@@ -21,7 +21,6 @@ func parseLineajeReport(file string) (*LineajeReport, error) {
 	if err = json.Unmarshal(data, &lineaje); err != nil {
 		return nil, err
 	}
-	fmt.Println(&lineaje)
 	return &lineaje, nil
 }
 
@@ -49,14 +48,14 @@ func (k *LineajeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 		},
 	}
 
-	for i := range report.meta_data.basic_plan_component_vulnerability_fixes {
-		vulnerabilities := &report.meta_data.basic_plan_component_vulnerability_fixes[i]
-		if vulnerabilities.target_component_purl != "" {
+	for i := range report.Meta_data.Basic_plan_component_vulnerability_fixes {
+		vulnerabilities := &report.Meta_data.Basic_plan_component_vulnerability_fixes[i]
+		if vulnerabilities.Target_component_purl != "" {
 			updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
-				Name:             getPackageName(vulnerabilities.current_component_purl),
-				InstalledVersion: getPackageVersion(vulnerabilities.current_component_purl),
-				FixedVersion:     getPackageVersion(vulnerabilities.target_component_purl),
-				VulnerabilityID:  "CVE-" + getPackageVersion(vulnerabilities.target_component_purl),
+				Name:             getPackageName(vulnerabilities.Current_component_purl),
+				InstalledVersion: getPackageVersion(vulnerabilities.Current_component_purl),
+				FixedVersion:     getPackageVersion(vulnerabilities.Target_component_purl),
+				VulnerabilityID:  "CVE-" + getPackageVersion(vulnerabilities.Target_component_purl),
 			})
 		}
 	}

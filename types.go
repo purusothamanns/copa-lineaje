@@ -3,15 +3,15 @@ package main
 
 // FakeReport contains OS, Arch, and Package information
 type LineajeReport struct {
-	meta_data LineajeVulnerability
+	Meta_data LineajeVulnerability `json:"meta_data"`
 }
 
 type LineajeVulnerability struct {
-	basic_plan_component_vulnerability_fixes []Vulnerability
+	Basic_plan_component_vulnerability_fixes []Vulnerability `json:"basic_plan_component_vulnerability_fixes"`
 }
 
 // FakePackage contains package and vulnerability information
 type Vulnerability struct {
-	current_component_purl string
-	target_component_purl  string
+	Current_component_purl string `json:"current_component_purl"`
+	Target_component_purl  string `json:"target_component_purl"`
 }
