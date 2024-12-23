@@ -56,7 +56,7 @@ func (k *LineajeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 				Name:             getPackageName(vulnerabilities.Current_component_purl),
 				InstalledVersion: getPackageVersion(vulnerabilities.Current_component_purl),
 				FixedVersion:     getPackageVersion(vulnerabilities.Target_component_purl),
-				VulnerabilityID:  "CVE-2022-29458",
+				VulnerabilityID:  "CVE-1234-56789",
 			})
 		}
 	}
