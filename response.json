@@ -49,7 +49,7 @@
                 "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
                 "target_hub_package_id": null,
                 "target_hub_sbom_id": null,
-                "current_component_purl": "pkg:deb/debian/ncurses-bin@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "current_component_purl": "pkg:deb/debian/ncurses-bin@6.2+20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
                 "target_component_purl": "pkg:deb/debian/ncurses-bin@6.2+20201114-2+deb11u2",
                 "fixed_vuln": 2
             },
