@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 
 	v1alpha1 "github.com/project-copacetic/copacetic/pkg/types/v1alpha1"
@@ -101,8 +102,9 @@ func getPackageVersion(packageString string) string {
 func getPackageName(packageString string) string {
 	parts := strings.Split(packageString, "@")
 	if len(parts) > 1 {
-		version := strings.Split(parts[0], "?")[0]
-		return version
+		name := strings.Split(parts[0], "?")[0]
+		baseName := filepath.Base(name)
+		return baseName
 	}
 	return ""
 }
