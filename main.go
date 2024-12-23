@@ -53,7 +53,7 @@ func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 	// Convert the fake report to the standardized report
 
 	updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
-		Name:             "ncurses-bin:6.2+20201114-2",
+		Name:             "ncurses-bin",
 		InstalledVersion: "6.2+20201114-2",
 		FixedVersion:     "6.2+20201114-2+deb11u2",
 		VulnerabilityID:  "CVE-2022-29458",
