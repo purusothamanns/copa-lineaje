@@ -1,0 +1,579 @@
+{
+    "name":"test",
+    "age":20,
+    "response_time": 0.03131413459777832,
+    "answer": "## Compatible Update\n\n\nThere are 2 components that can be fixed via the compatible update.\n\n\nHere are some of the components:\n- `pkg:deb/debian/ncurses-bin@6.2+20201114-2?arch=amd64&upstream=ncurses&distro=debian-11` to `pkg:deb/debian/ncurses-bin@6.2+20201114-2+deb11u2`\n- `pkg:generic/oracle/openjdk@11.0.16` to `pkg:generic/oracle/openjdk@11.0.25`\n\n\n## Impact due to Changes from Compatible Update\n\n\nThe inherent risk level has changed from 10.0 to 9.92.\nAlso, the vulnerability count has changed from 328 to 289.\n\n\n## Minor Update\n\n\nThere are 16 components that can be fixed via the minor update.\n\n\nHere are some of the components:\n- `pkg:deb/debian/ncurses-bin@6.2+20201114-2?arch=amd64&upstream=ncurses&distro=debian-11` to `pkg:deb/debian/ncurses-bin@6.2+20201114-2+deb11u2`\n- `pkg:generic/oracle/openjdk@11.0.16` to `pkg:generic/oracle/openjdk@23.0.1`\n- `pkg:deb/debian/libnghttp2-14@1.43.0-1?arch=amd64&distro=debian-11&upstream=nghttp2` to `pkg:deb/debian/libnghttp2-14@1.43.0-1+deb11u2`\n- `pkg:deb/debian/libtasn1-6@4.16.0-2?arch=amd64&distro=debian-11` to `pkg:deb/debian/libtasn1-6@4.16.0-2+deb11u1`\n- `pkg:deb/debian/libssl1.1@1.1.1n-0+deb11u3?arch=amd64&upstream=openssl&distro=debian-11` to `pkg:deb/debian/libssl1.1@1.1.1v-0~deb11u1`\n\n\n## Impact due to Changes from Minor Update\n\n\nThe inherent risk level has changed from 10.0 to 9.87.\nAlso, the vulnerability count has changed from 328 to 243.\n\n\n## Major Update\n\n\nThere are some components that can be fixed via the major update.\n\n\nHere are some of the components:\n- `pkg:deb/debian/ncurses-bin@6.2+20201114-2?arch=amd64&upstream=ncurses&distro=debian-11`\n- `pkg:deb/debian/e2fsprogs@1.46.2-2?arch=amd64&distro=debian-11`\n- `pkg:deb/debian/bash@5.1-2+deb11u1?arch=amd64&distro=debian-11`\n- `pkg:generic/oracle/openjdk@11.0.16`\n- `pkg:deb/debian/git@1:2.30.2-1?arch=amd64&distro=debian-11`\n- `pkg:deb/debian/python3.9@3.9.2-1?arch=amd64&distro=debian-11`\n\n\n## Impact due to Major Update\n\n\nThe inherent risk level has changed from 10.0 to 8.2 after applying the major update.\nAlso, the vulnerability count has changed from 328 to 33 after applying the major update.\n\n",
+    "graphql": null,
+    "query_suggestions": null,
+    "view_details": {},
+    "meta_data": {
+        "total_components": 180,
+        "initial_irl": 10.0,
+        "direct_dependencies": {
+            "total": 45,
+            "oss": 22,
+            "private": 0,
+            "tp": 20,
+            "unknown": 3
+        },
+        "transitive_dependencies": {
+            "total": 135,
+            "oss": 94,
+            "private": 0,
+            "tp": 39,
+            "unknown": 2
+        },
+        "direct_vulnerabilities": {
+            "total": 71,
+            "oss": 4,
+            "private": 0,
+            "tp": 48,
+            "unknown": 19
+        },
+        "transitive_vulnerabilities": {
+            "total": 257,
+            "oss": 161,
+            "private": 0,
+            "tp": 77,
+            "unknown": 19
+        },
+        "total_vulnerability_count": 328,
+        "total_components_with_vulnerabilities": 58,
+        "vulnerable_components_with_fixes_in_basic_plan": 2,
+        "vulnerable_components_with_fixes_in_balanced_plan": 16,
+        "vulnerabilities_with_fixes_in_basic_plan": 39,
+        "vulnerabilities_with_fixes_in_balanced_plan": 85,
+        "basic_plan_component_vulnerability_fixes": [
+            {
+                "current_package_id": "SPDX-PACKAGE-542ca35f-6fca-53f4-8744-208b9a8963c9",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/ncurses-bin@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/ncurses-bin@6.2+20201114-2+deb11u2",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-fcd9903c-29fd-5528-9c3c-6cbd0450897d",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:generic/oracle/openjdk@11.0.16",
+                "target_component_purl": "pkg:generic/oracle/openjdk@11.0.25",
+                "fixed_vuln": 37
+            }
+        ],
+        "balanced_plan_components_vulnerability_fixes": [
+            {
+                "current_package_id": "SPDX-PACKAGE-542ca35f-6fca-53f4-8744-208b9a8963c9",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/ncurses-bin@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/ncurses-bin@6.2+20201114-2+deb11u2",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-fcd9903c-29fd-5528-9c3c-6cbd0450897d",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:generic/oracle/openjdk@11.0.16",
+                "target_component_purl": "pkg:generic/oracle/openjdk@23.0.1",
+                "fixed_vuln": 37
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9f9fc596-da01-518b-baf1-c631dcbfa48f",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libnghttp2-14@1.43.0-1?arch=amd64&distro=debian-11&upstream=nghttp2",
+                "target_component_purl": "pkg:deb/debian/libnghttp2-14@1.43.0-1+deb11u2",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-577f4ca9-f5f1-50dd-a687-ca5eb0a66028",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtasn1-6@4.16.0-2?arch=amd64&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/libtasn1-6@4.16.0-2+deb11u1",
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-e568cbf4-7fde-5c8c-a951-e3e4a3804931",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libssl1.1@1.1.1n-0%2Bdeb11u3?arch=amd64&upstream=openssl&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/libssl1.1@1.1.1v-0~deb11u1",
+                "fixed_vuln": 17
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-daed9267-633a-5e6d-ae80-e7bbbe02a7b0",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libssh2-1@1.9.0-2?arch=amd64&distro=debian-11&upstream=libssh2",
+                "target_component_purl": "pkg:deb/debian/libssh2-1@1.9.0-2+deb11u1",
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-a70c7274-42e6-543c-8a83-7b2abbd9b7e8",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtirpc-common@1.3.1-1?arch=all&distro=debian-11&upstream=libtirpc",
+                "target_component_purl": "pkg:deb/debian/libtirpc-common@1.3.1-1+deb11u1",
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-eaea5f2b-5294-5ade-b2ef-010fbd8b786b",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libsystemd0@247.3-7?arch=amd64&distro=debian-11&upstream=systemd",
+                "target_component_purl": "pkg:deb/debian/libsystemd0@247.3-7+deb11u6",
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-1a93ac1f-10fe-557d-880d-22ab36071722",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/tar@1.34%2Bdfsg-1?arch=amd64&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/tar@1.34+dfsg-1+deb11u1",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9facb350-5193-57a8-9881-2b8d5642e2cd",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libudev1@247.3-7?arch=amd64&distro=debian-11&upstream=systemd",
+                "target_component_purl": "pkg:deb/debian/libudev1@247.3-7+deb11u6",
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-45fbf899-c6c6-5c67-8639-2505632014ad",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libksba8@1.5.0-3?arch=amd64&distro=debian-11&upstream=libksba",
+                "target_component_purl": "pkg:deb/debian/libksba8@1.5.0-3+deb11u2",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-91383e81-3b31-5e6d-84a3-cd3d143a8900",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/perl-base@5.32.1-4%2Bdeb11u2?arch=amd64&upstream=perl&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/perl-base@5.32.1-4+deb11u4",
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-f2265162-2f62-5ab9-8333-a18217a15598",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libsqlite3-0@3.34.1-3?arch=amd64&distro=debian-11&upstream=sqlite3",
+                "target_component_purl": "pkg:deb/debian/libsqlite3-0@3.34.1-3+deb11u1",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9f59fcd5-9669-5869-ad3b-4283998d1f07",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtinfo6@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "target_component_purl": "pkg:deb/debian/libtinfo6@6.2+20201114-2+deb11u2",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-f89dde5a-2ef6-5eb6-b3ea-2a3267653614",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpcre2-8-0@10.36-2?arch=amd64&distro=debian-11&upstream=pcre2",
+                "target_component_purl": "pkg:deb/debian/libpcre2-8-0@10.36-2+deb11u1",
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-2ef39c6f-454b-5313-acf4-56e0576263e0",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtirpc3@1.3.1-1?arch=amd64&distro=debian-11&upstream=libtirpc",
+                "target_component_purl": "pkg:deb/debian/libtirpc3@1.3.1-1+deb11u1",
+                "fixed_vuln": 1
+            }
+        ],
+        "comprehensive_plan_components": [
+            {
+                "current_package_id": "SPDX-PACKAGE-542ca35f-6fca-53f4-8744-208b9a8963c9",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/ncurses-bin@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 4
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-e9f5ceb6-b5e6-5453-9b41-f95c28623d3b",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/e2fsprogs@1.46.2-2?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-43c2288a-61db-559a-b232-ffc4d526595c",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/bash@5.1-2%2Bdeb11u1?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-fcd9903c-29fd-5528-9c3c-6cbd0450897d",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:generic/oracle/openjdk@11.0.16",
+                "target_component_purl": null,
+                "fixed_vuln": 37
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-f056dd56-bbc1-5369-b097-d63868bec607",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/git@1:2.30.2-1?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 19
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-e100fc51-9e53-5462-8972-bcd5bf1c448f",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/python3.9@3.9.2-1?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 27
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-dac0df5f-fe6e-53e1-837b-11393c8823f1",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpam-runtime@1.4.0-9%2Bdeb11u1?arch=all&upstream=pam&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9f9fc596-da01-518b-baf1-c631dcbfa48f",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libnghttp2-14@1.43.0-1?arch=amd64&distro=debian-11&upstream=nghttp2",
+                "target_component_purl": null,
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-577f4ca9-f5f1-50dd-a687-ca5eb0a66028",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtasn1-6@4.16.0-2?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-1966e912-30da-5a90-8ed3-836decb2b65f",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpam-modules-bin@1.4.0-9%2Bdeb11u1?arch=amd64&upstream=pam&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-e568cbf4-7fde-5c8c-a951-e3e4a3804931",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libssl1.1@1.1.1n-0%2Bdeb11u3?arch=amd64&upstream=openssl&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 17
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-b629a7f3-74c8-5243-856f-2c8295c1b8a3",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/logsave@1.46.2-2?arch=amd64&upstream=e2fsprogs&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-97045ad7-7238-557d-9159-d57aecd71d64",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpam0g@1.4.0-9%2Bdeb11u1?arch=amd64&upstream=pam&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-444af024-ad4b-5904-9b56-2806af5486b9",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libdb5.3@5.3.28%2Bdfsg1-0.8?arch=amd64&upstream=db5.3&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-daed9267-633a-5e6d-ae80-e7bbbe02a7b0",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libssh2-1@1.9.0-2?arch=amd64&distro=debian-11&upstream=libssh2",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-d4f8f96b-8e39-584a-b73b-2d0c7bee9fd0",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libext2fs2@1.46.2-2?arch=amd64&upstream=e2fsprogs&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-a70c7274-42e6-543c-8a83-7b2abbd9b7e8",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtirpc-common@1.3.1-1?arch=all&distro=debian-11&upstream=libtirpc",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-eaea5f2b-5294-5ade-b2ef-010fbd8b786b",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libsystemd0@247.3-7?arch=amd64&distro=debian-11&upstream=systemd",
+                "target_component_purl": null,
+                "fixed_vuln": 10
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-85280715-e106-5f9d-8356-377a4a148224",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpython3.9-minimal@3.9.2-1?arch=amd64&distro=debian-11&upstream=python3.9",
+                "target_component_purl": null,
+                "fixed_vuln": 27
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-1a93ac1f-10fe-557d-880d-22ab36071722",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/tar@1.34%2Bdfsg-1?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-3aa9136a-9a19-5035-a26e-99f650a5796f",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libss2@1.46.2-2?arch=amd64&upstream=e2fsprogs&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-648e1c1d-aae7-5c7d-beb8-845732b77696",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/passwd@1:4.8.1-1?arch=amd64&upstream=shadow&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-c6bd07fe-0a46-5410-95b9-3eeba874cdbd",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libgcrypt20@1.8.7-6?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-7c76c6e2-40e9-537b-be72-b5c8b0c6dc86",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpython3.9-stdlib@3.9.2-1?arch=amd64&distro=debian-11&upstream=python3.9",
+                "target_component_purl": null,
+                "fixed_vuln": 27
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-e10521cc-38c4-5174-be9f-87e2e69250e6",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/login@1:4.8.1-1?arch=amd64&upstream=shadow&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-7cb750ef-dfda-5625-a0bf-e53e12d52302",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/openssl@1.1.1n-0+deb11u3?arch=amd64&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 6
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9facb350-5193-57a8-9881-2b8d5642e2cd",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libudev1@247.3-7?arch=amd64&distro=debian-11&upstream=systemd",
+                "target_component_purl": null,
+                "fixed_vuln": 10
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-379ce86e-69d5-543d-9929-a604259a829e",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libcom-err2@1.46.2-2?arch=amd64&upstream=e2fsprogs&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-45fbf899-c6c6-5c67-8639-2505632014ad",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libksba8@1.5.0-3?arch=amd64&distro=debian-11&upstream=libksba",
+                "target_component_purl": null,
+                "fixed_vuln": 2
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-91383e81-3b31-5e6d-84a3-cd3d143a8900",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/perl-base@5.32.1-4%2Bdeb11u2?arch=amd64&upstream=perl&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9d1b3812-7143-5a8c-9701-d35664e367ff",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/git-man@1:2.30.2-1?arch=all&distro=debian-11&upstream=git",
+                "target_component_purl": null,
+                "fixed_vuln": 19
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-1decf8c7-27f3-5ee5-9b45-31c9d903142a",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/python3.9-minimal@3.9.2-1?arch=amd64&distro=debian-11&upstream=python3.9",
+                "target_component_purl": null,
+                "fixed_vuln": 27
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-3e26a36e-1e7a-5bb7-ac22-c68324732928",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpam-modules@1.4.0-9%2Bdeb11u1?arch=amd64&upstream=pam&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-b692b176-b9ad-5aa0-918f-64afee8871ba",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libzstd1@1.4.8%2Bdfsg-2.1?arch=amd64&upstream=libzstd&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-ed33fd53-8777-568f-aa11-56a4901b57e3",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpcre3@2:8.39-13?arch=amd64&upstream=pcre3&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 5
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-f2265162-2f62-5ab9-8333-a18217a15598",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libsqlite3-0@3.34.1-3?arch=amd64&distro=debian-11&upstream=sqlite3",
+                "target_component_purl": null,
+                "fixed_vuln": 4
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-9f59fcd5-9669-5869-ad3b-4283998d1f07",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtinfo6@6.2%2B20201114-2?arch=amd64&upstream=ncurses&distro=debian-11",
+                "target_component_purl": null,
+                "fixed_vuln": 4
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-f89dde5a-2ef6-5eb6-b3ea-2a3267653614",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libpcre2-8-0@10.36-2?arch=amd64&distro=debian-11&upstream=pcre2",
+                "target_component_purl": null,
+                "fixed_vuln": 3
+            },
+            {
+                "current_package_id": "SPDX-PACKAGE-2ef39c6f-454b-5313-acf4-56e0576263e0",
+                "current_sbom_id": "SPDXRef-DOCUMENT-vdna_pwoSyiWmMerbHoqt-4319646-4319647",
+                "target_hub_package_id": null,
+                "target_hub_sbom_id": null,
+                "current_component_purl": "pkg:deb/debian/libtirpc3@1.3.1-1?arch=amd64&distro=debian-11&upstream=libtirpc",
+                "target_component_purl": null,
+                "fixed_vuln": 1
+            }
+        ],
+        "basic_plan_inherent_risk_level": 9.92,
+        "basic_plan_updated_vulnerability_count": 289,
+        "balanced_plan_inherent_risk_level": 9.87,
+        "balanced_plan_updated_vulnerability_count": 243,
+        "comprehensive_plan_inherent_risk_level": 8.2,
+        "comprehensive_plan_updated_vulnerability_count": 33
+    },
+    "column": null,
+    "view_schema": null,
+    "Greeting": null,
+    "guid": null,
+    "message": null,
+    "workflow_id": null,
+    "error": false
+}

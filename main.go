@@ -4,39 +4,38 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	v1alpha1 "github.com/project-copacetic/copacetic/pkg/types/v1alpha1"
 )
 
-type FakeParser struct{}
+type LineajeParser struct{}
 
-// parseFakeReport parses a fake report from a file
-func parseFakeReport(file string) (*FakeReport, error) {
+func parseLineajeReport(file string) (*LineajeReport, error) {
 	data, err := os.ReadFile(file)
 	if err != nil {
 		return nil, err
 	}
 
-	var fake FakeReport
-	if err = json.Unmarshal(data, &fake); err != nil {
+	var lineaje LineajeReport
+	if err = json.Unmarshal(data, &lineaje); err != nil {
+		return nil, err
+	}
+	fmt.Println(&lineaje)
+	return &lineaje, nil
+}
+
+func newLineajeParser() *LineajeParser {
+	return &LineajeParser{}
+}
+
+func (k *LineajeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
+
+	report, err := parseLineajeReport(file)
+	if err != nil {
 		return nil, err
 	}
 
-	return &fake, nil
-}
-
-func newFakeParser() *FakeParser {
-	return &FakeParser{}
-}
-
-func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
-	// Parse the fake report
-	//report, err := parseFakeReport(file)
-	//if err != nil {
-	//return nil, err
-	//}
-
-	// Create the standardized report
 	updates := v1alpha1.UpdateManifest{
 		APIVersion: v1alpha1.APIVersion,
 		Metadata: v1alpha1.Metadata{
@@ -50,30 +49,33 @@ func (k *FakeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 		},
 	}
 
-	// Convert the fake report to the standardized report
-
-	updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
-		Name:             "debian:ncurses-bin:6.2+20201114-2",
-		InstalledVersion: "6.2+20201114-2",
-		FixedVersion:     "6.2+20201114-2+deb11u2",
-		VulnerabilityID:  "CVE-2022-29458",
-	})
+	for i := range report.meta_data.basic_plan_component_vulnerability_fixes {
+		vulnerabilities := &report.meta_data.basic_plan_component_vulnerability_fixes[i]
+		if vulnerabilities.target_component_purl != "" {
+			updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
+				Name:             getPackageName(vulnerabilities.current_component_purl),
+				InstalledVersion: getPackageVersion(vulnerabilities.current_component_purl),
+				FixedVersion:     getPackageVersion(vulnerabilities.target_component_purl),
+				VulnerabilityID:  "CVE-" + getPackageVersion(vulnerabilities.target_component_purl),
+			})
+		}
+	}
 	return &updates, nil
 }
 
 func main() {
+
 	if len(os.Args) != 2 {
 		fmt.Printf("Usage: %s <image report>\n", os.Args[0])
 		os.Exit(1)
 	}
 
 	// Initialize the parser
-	fakeParser := newFakeParser()
+	lineajeParser := newLineajeParser()
 
 	// Get the image report from command line
 	imageReport := os.Args[1]
-
-	report, err := fakeParser.parse(imageReport)
+	report, err := lineajeParser.parse(imageReport)
 	if err != nil {
 		fmt.Printf("error parsing report: %v\n", err)
 		os.Exit(1)
@@ -87,4 +89,21 @@ func main() {
 	}
 
 	os.Stdout.Write(reportBytes)
+}
+
+func getPackageVersion(packageString string) string {
+	parts := strings.Split(packageString, "@")
+	if len(parts) > 1 {
+		version := strings.Split(parts[1], "?")[0]
+		return version
+	}
+	return ""
+}
+func getPackageName(packageString string) string {
+	parts := strings.Split(packageString, "@")
+	if len(parts) > 1 {
+		version := strings.Split(parts[0], "?")[0]
+		return version
+	}
+	return ""
 }

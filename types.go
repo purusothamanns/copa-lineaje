@@ -2,17 +2,16 @@
 package main
 
 // FakeReport contains OS, Arch, and Package information
-type FakeReport struct {
-	OSType    string
-	OSVersion string
-	Arch      string
-	Packages  []FakePackage
+type LineajeReport struct {
+	meta_data LineajeVulnerability
+}
+
+type LineajeVulnerability struct {
+	basic_plan_component_vulnerability_fixes []Vulnerability
 }
 
 // FakePackage contains package and vulnerability information
-type FakePackage struct {
-	Name             string
-	InstalledVersion string
-	FixedVersion     string
-	VulnerabilityID  string
+type Vulnerability struct {
+	current_component_purl string
+	target_component_purl  string
 }
