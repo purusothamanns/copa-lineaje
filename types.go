@@ -7,7 +7,8 @@ type LineajeReport struct {
 }
 
 type LineajeVulnerability struct {
-	Basic_plan_component_vulnerability_fixes []Vulnerability `json:"basic_plan_component_vulnerability_fixes"`
+	Basic_plan_component_vulnerability_fixes     []Vulnerability `json:"basic_plan_component_vulnerability_fixes"`
+	Balanced_plan_components_vulnerability_fixes []Vulnerability `json:"balanced_plan_components_vulnerability_fixes`
 }
 
 // FakePackage contains package and vulnerability information

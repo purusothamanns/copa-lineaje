@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -49,12 +50,17 @@ func (k *LineajeParser) parse(file string) (*v1alpha1.UpdateManifest, error) {
 		},
 	}
 
-	for i := range report.Meta_data.Basic_plan_component_vulnerability_fixes {
-		vulnerabilities := &report.Meta_data.Basic_plan_component_vulnerability_fixes[i]
-		if vulnerabilities.Target_component_purl != "" {
+	for i := range report.Meta_data.Balanced_plan_components_vulnerability_fixes {
+		vulnerabilities := &report.Meta_data.Balanced_plan_components_vulnerability_fixes[i]
+		if vulnerabilities.Target_component_purl != "" && strings.Contains(vulnerabilities.Current_component_purl, "pkg:deb") {
+			decodedStr, err := url.QueryUnescape(getPackageVersion(vulnerabilities.Current_component_purl))
+			if err != nil {
+				fmt.Println("Error decoding string:", err)
+				decodedStr = getPackageVersion(vulnerabilities.Current_component_purl)
+			}
 			updates.Updates = append(updates.Updates, v1alpha1.UpdatePackage{
 				Name:             getPackageName(vulnerabilities.Current_component_purl),
-				InstalledVersion: getPackageVersion(vulnerabilities.Current_component_purl),
+				InstalledVersion: decodedStr,
 				FixedVersion:     getPackageVersion(vulnerabilities.Target_component_purl),
 				VulnerabilityID:  "CVE-1234-56789",
 			})
